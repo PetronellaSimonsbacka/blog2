@@ -3,9 +3,9 @@
   <head>
     <title>BlogBlog</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= auto_discovery_link_tag :atom, "/posts.atom" %>
   </head>
 
   <body>

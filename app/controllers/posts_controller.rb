@@ -1,14 +1,15 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  # GET /posts
-  # GET /posts.json
   def index
     @posts = Post.all
+    respond_to do |format|
+      format.html
+      format.xml {render :xml => @posts}
+      format.atom
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
+
   def show
   end
 
@@ -17,12 +18,9 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  # GET /posts/1/edit
   def edit
   end
 
-  # POST /posts
-  # POST /posts.json
   def create
     @post = Post.new(post_params)
 
